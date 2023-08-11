@@ -1,0 +1,195 @@
+.Body {
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+
+}
+
+.Container {
+
+  background-color: rgb(212, 210, 210);
+  height: 100vh;
+  text-align: start;
+  font-weight: 900;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.profilephoto {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.profilephoto img {
+
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+.bi-upload {
+  width: 30px;
+  display: flex;
+
+  content: "\e912";
+  font-family: "Bootstrap Icons";
+  font-size: 1.5rem;
+}
+
+.bi-upload h5 {
+
+  margin-left: 10px;
+}
+
+.Container h1 {
+  margin-top: 30px;
+
+  color: black;
+  border-bottom: 1px solid black;
+  margin-left: 30px;
+  font-weight: 800;
+}
+
+.Container form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  color: black;
+  text-align: left;
+}
+
+.Container label {
+  color: black;
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.textField input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  color: rgb(148, 148, 148);
+}
+
+.textField label {
+  transform: translateY(-50%);
+}
+
+
+
+.signupLink:hover {
+  cursor: pointer;
+  color: brown;
+  font-weight: bold;
+}
+
+.signupLink:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.butonDiv {
+
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+}
+
+.Loginlink {
+  margin-right: 158px;
+  background-color: rgb(0, 140, 255);
+  border: #fffdfd;
+  border-radius: 40px;
+  font-size: large;
+  width: 100px;
+  height: 40px;
+  color: #fffdfd;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.LoginLink:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.signupField {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}
+
+.signupField h6 {
+  margin-top: 4px;
+
+}
+
+
+.signupField .signupLink {
+
+  padding: 0 0;
+  margin-left: 20px;
+  width: fit-content;
+  color: black;
+  border: none;
+  background-color: rgb(255, 255, 255);
+
+}
+
+
+
+.AdminLogin {
+  margin-left: 20px;
+  width: 80px;
+  height: 30px;
+  background-color: brown;
+  color: #ffffff;
+  border: 2px solid black;
+  border-top: #fffdfd;
+  border-left: #fffdfd;
+  border-radius: 20px;
+}
+
+.AdminLogin:hover {
+  background-color: rgb(214, 54, 54);
+  border: 0;
+  border-radius: 20px;
+}
+
+.adminfield {
+  margin-top: 20px;
+}
+
+.adminfield_sub h5 .AdminLogin {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 0;
+
+}

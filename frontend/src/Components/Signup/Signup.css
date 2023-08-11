@@ -1,0 +1,87 @@
+
+.head{
+    display: flex;
+    margin-top: 10px;
+    padding: 0 20px;
+    
+}
+.body{
+  background-image: url('./background.jpg'); 
+}
+.backbutton{
+     left: 30px;
+}
+.SignupContainer {
+  text-align: center;
+    margin: 0 auto;
+    width: 350px;
+    height: 500px;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.753) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background: #ffffff;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+  
+  .SignupContainer:hover {
+    transition: 0.5s;
+    box-shadow: -6px 8px 79px rgba(0, 0, 0, 0.5);
+  }
+  
+  .SignupContainer h1 {
+    position: relative;
+    margin: 0;
+    left: 20%;
+    color: black;
+    border-bottom: 1px solid black;
+  }
+  
+  .SignupContainer form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    color: black;
+    text-align: left;
+  }
+  
+  .SignupContainer label {
+    color: black;
+  }
+  
+  .textField {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  
+  .textField input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    color: rgb(148, 148, 148);
+  }
+  
+  .textField label {
+    transform: translateY(-50%);
+  }
+  
+
+  
+
+  .SignupLink {
+    margin-top: 30px;
+    background-color: rgb(15, 185, 0);
+    border: #fffdfd;
+    border-radius: 40px;
+    font-size: large;
+    width: 100%;
+    height: 40px;
+    color: #fffdfd;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  
+  .SignupLink:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }

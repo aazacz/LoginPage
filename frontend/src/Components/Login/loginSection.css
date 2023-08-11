@@ -1,0 +1,147 @@
+.body {
+  background-image: url('./background.jpg'); 
+  background-size: 100%;
+  max-width: 1400px;
+  height: 560px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+
+}
+.loginContainer {
+  text-align: center;
+  margin: 0 auto;
+  width: 350px;
+  height: 500px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.753) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background: #ffffff;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.loginContainer:hover {
+  transition: 0.5s;
+  box-shadow: -6px 8px 79px rgba(0, 0, 0, 0.5);
+}
+
+.loginContainer h1 {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.loginContainer form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  color: black;
+  text-align: left;
+}
+
+.loginContainer label {
+  color: black;
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.textField input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  color: rgb(148, 148, 148);
+}
+
+.textField label {
+  transform: translateY(-50%);
+}
+
+
+
+.signupLink:hover {
+  cursor: pointer;
+  color: brown;
+  font-weight: bold;
+}
+
+.signupLink:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.LoginLink {
+  margin-top: 30px;
+  background-color: rgb(0, 140, 255);
+  border: #fffdfd;
+  border-radius: 40px;
+  font-size: large;
+  width: 100%;
+  height: 40px;
+  color: #fffdfd;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.LoginLink:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.signupField {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}
+.signupField h6{
+  margin-top: 4px;
+  
+}
+
+
+.signupField .signupLink {
+
+  padding: 0 0;
+  margin-left: 20px;
+  width: fit-content;
+  color: black;
+  border: none;
+  background-color: rgb(255, 255, 255);
+
+}
+
+
+
+.AdminLogin {
+  margin-left: 20px;
+  width: 80px;
+  height: 30px;
+  background-color: brown;
+  color: #ffffff;
+  border: 2px solid black;
+  border-top: #fffdfd;
+  border-left: #fffdfd;
+  border-radius: 20px;
+}
+
+.AdminLogin:hover {
+  background-color: rgb(214, 54, 54);
+  border: 0;
+  border-radius: 20px;
+}
+.adminfield{
+  margin-top: 20px;
+}
+
+.adminfield_sub h5 .AdminLogin{
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 0;
+
+}
