@@ -9,10 +9,9 @@ import { useSelector } from 'react-redux';
 
 
 const UserDashboardDefault = () => {
-
-  const users=useSelector((state)=>state.user)
-  console.log(users)
-
+const userdetails = useSelector(state=>state.login)
+console.log(userdetails);
+ 
   return (
     <>
 
@@ -23,7 +22,7 @@ const UserDashboardDefault = () => {
         <div className="col-auto col-md-3 col-xl-12 px-sm-2 px-0 bg-dark">
             <div className="d-flex flex-column align-items-center pt-2 text-white min-vh-100">
               
-               <h2>hai Abhilash Welcome to your Dashboard page</h2>
+               <h2>hai {userdetails.name} Welcome to your Dashboard page</h2>
                
             </div>
         </div>

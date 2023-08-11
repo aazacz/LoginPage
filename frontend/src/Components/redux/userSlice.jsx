@@ -24,6 +24,22 @@ export const userSlice = createSlice({
   reducers: {
     LoadUser: (state, action) => {
       return action.payload;
+    },
+    loginUser:(state,action)=>{
+        // state.name  = action.payload.name,
+        // state.email = action.payload.email,
+        // state.login = action.payload.login,
+        // state.token = action.payload.token
+        const { name, email, login, token,image } = action.payload;
+
+  return {
+    ...state,
+    name: name,
+    email: email,
+    login: login,
+    token: token,
+    image: image,
+  };
     }
   },
   extraReducers: (builder) => {
@@ -38,5 +54,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { LoadUser } = userSlice.actions;
+export const { LoadUser,loginUser } = userSlice.actions;
 export default userSlice.reducer;

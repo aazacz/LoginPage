@@ -11,10 +11,8 @@ import LoginSection from '../Login/LoginSection';
 
 
 const UserDashboard = () => {
-
-  const users=useSelector((state)=>state.user)
-  console.log(users)
-
+const user = useSelector(state=>state.login)
+console.log(user);
   return (
     <>
 

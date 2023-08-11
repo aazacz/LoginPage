@@ -5,13 +5,11 @@
     import "./Dashboard.css"
     import { Link, Outlet } from 'react-router-dom';
     import { useSelector } from 'react-redux';
-    // import UserDetails from '../UserDetails';
+
 
 
     const Dashboard = () => {
 
-    // const users=useSelector((state)=>state.user)
-    // console.log(users)
     return (
         <>
 

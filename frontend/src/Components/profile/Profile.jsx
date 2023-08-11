@@ -1,35 +1,69 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useSelector,useDispatch } from "react-redux";
+import { loginUser } from "../redux/userSlice";
+
+
 
 const Profile = () => {
-  const [name, SetName] = useState("");
-  const [email, SetEmail] = useState("");
 
-  console.log(name, email);
+  // const updateState =()=>{
+  // return  const user = useSelector(state=>state.login)
+  //   console.log(user);
+  // }
+  const user = useSelector(state=>state.login)
+   console.log(user);
+  useEffect(()=>{
+     
+    if (localStorage.getItem('login')) {
+      const loginData = JSON.parse(localStorage.getItem('login'));
+      if (loginData.login && loginData.token) {
+            
+           }
+    }
+  })
+  
 
   const [values, Setvalues] = useState({
-    email: "",
-    password: "",
+    name:  user.name,
+    email: user.email,
+    image: user.image
   });
+  
+  const formdata= new FormData()
+        formdata.append("name",values.name)
+        formdata.append("email",values.email)
+        formdata.append("image",values.image)
+        formdata.append("token",user.token)
+
+
 
   const [error, SetError] = useState("");
 
   const navigate = useNavigate();
-
+  const dispatch = useDispatch()
   const HandleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:5000/login", values)
+
+    axios.post("http://localhost:5000/updateProfile", formdata)
       .then((res) => {
+        dispatch(loginUser({
+          name: res.data.name,
+          email: res.data.email,
+          login: true,
+          token: res.data.token,
+          image: res.data.image}))
         navigate("/UserDashboard");
       })
       .catch((err) => console.log(err));
   };
+
+
 
   return (
     <>
@@ -45,22 +79,16 @@ const Profile = () => {
               
               <div className="row">
                 <div className="profilephoto col-lg-4">
-                  <img
-                    src={"/background.jpg"}
-                    width="100px"
-                    height="100px"
-                    alt="Profile"
-                    className="profile-image mr-2"
-                  />
+                <img src={`/${values.image}`} width="100px" height="100px" alt="Profile" className="profile-image mr-2" />
 
                 
   <label htmlFor="inputGroupFile01" className="bi bi-upload">
 <h5>Upload</h5>
 <input
-  type="file"
+    type="file"
   id="inputGroupFile01"
   className="visually-hidden"
-  onChange={e => setData({ ...data, image: e.target.files[0] })}/>
+  onChange={e => Setvalues({...values, image: e.target.files[0]})}/>
 </label>
 
 
@@ -73,25 +101,25 @@ const Profile = () => {
                   <label htmlFor="Email">Full Name</label>
                   <input
                     autoComplete="true"
-                    onChange={(e) => {
-                      SetName(e.target.value);
-                    }}
-                    type="email"
+                    onChange={e => Setvalues({...values, name: e.target.value })}
+                    type="text"
                     name="Email"
                     id="Email"
+                    placeholder={values.name}
+                    defaultValue={values.name}
                   />
                 </div>
 
                 <div className="textField col-lg-4 ">
                   <label htmlFor="Password">Your Email</label>
                   <input
-                    onChange={(e) => {
-                      SetEmail(e.target.value);
-                    }}
+                   readOnly
+                    onChange={e => Setvalues({...values, name: e.target.value })}
                     type="Password"
                     name="Password"
                     id="Password"
                     defaultValue=""
+                    placeholder={values.email}
                   />
                 </div>
               </div>

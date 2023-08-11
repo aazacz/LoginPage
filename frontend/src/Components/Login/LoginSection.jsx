@@ -3,27 +3,55 @@ import Navbar from "../navBar/navbar";
 import "./loginSection.css";
 import { Link,useNavigate } from "react-router-dom";
 import axios from "axios"
-
-
+import { useDispatch } from "react-redux";
+import { loginUser } from "../redux/userSlice";
 const LoginSection = () => {
   const [values, Setvalues] = useState({
     email: "",
-    password: "",
+    password: ""
   });
 
 const [error,SetError] = useState("")
 
-const navigate=useNavigate()
-
+const navigate = useNavigate()
+const dispatch = useDispatch()
 
   const HandleSubmit=(event)=>{
   event.preventDefault();
   console.log(values);
-      axios.post("http://localhost:5000/login",values)
-           .then(res=>{
-           navigate('/UserDashboard')
-           })
-            .catch(err=>console.log(err))
+  let loginDetails = values
+  console.log(values);
+  console.log("loginDetails"+loginDetails);
+ 
+      axios.post("http://localhost:5000/login",loginDetails)
+           .then((res)=>{
+              console.warn("result",res.data);
+              console.warn("result",res.data.token);
+              localStorage.setItem('login',JSON.stringify({
+                login:true,
+                token:res.data.token
+              })  
+              )
+
+              if (localStorage.getItem('login')) {
+                const loginData = JSON.parse(localStorage.getItem('login'));
+                if (loginData.login && loginData.token) {
+                  dispatch(loginUser({
+                          name: res.data.name,
+                          email: res.data.email,
+                          login: true,
+                          token: res.data.token,
+                          image: res.data.image}))
+                           }
+              }
+
+              return res
+
+           }).then((res) => {
+            console.log("second then fucniton"+res);
+            navigate('/UserDashboard') 
+          })
+           .catch(err=>console.log(err))
 }
 
 
@@ -45,27 +73,14 @@ const navigate=useNavigate()
         <form onSubmit={HandleSubmit} action="">
           <div className="textField">
             <label htmlFor="Email">Enter Your Email</label>
-            <input autoComplete="true"
-              onChange={(e) => {
-                Setvalues({...values, email: e.target.value });
-              }}
-              type="email"
-              name="Email"
-              id="Email"
-            />
+            <input autoComplete="true"   onChange={(e) => { Setvalues({...values, email: e.target.value }); }}
+              type="email"  name="Email"  id="Email" />
           </div>
 
           <div className="textField">
             <label htmlFor="Password">Enter Your Password</label>
-            <input
-              onChange={(e) => {
-                Setvalues({...values, password: e.target.value });
-              }}
-              type="Password"
-              name="Password"
-              id="Password"
-              defaultValue=""
-            />
+            <input  onChange={(e) => {  Setvalues({...values, password: e.target.value });}}
+              type="Password"  name="Password" id="Password"  defaultValue=""/>
           </div>
 
           <button type="submit" className="LoginLink">
