@@ -24,7 +24,7 @@ useEffect( ()=>{
     getUserList()
  } catch (error) {
     console.error(error);
- }
+ }  
 },[])
 
 //to get the user details from the redux store and list the users down

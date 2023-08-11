@@ -25,4 +25,5 @@ const upload = multer({
 adminRoute.post("/login", adminController.login);
 adminRoute.get('/userlist',adminController.userlist)
 adminRoute.post('/create',upload.single('image'),adminController.create)
+adminRoute.post('/removeuser',adminController.removeuser)
 module.exports = adminRoute;

@@ -45,8 +45,27 @@ const create = async (req, res) => {
   }
 };
 
+
+//to remove a user
+const removeuser=async(req,res)=>{
+try {
+  console.log("req.body")
+  console.log(req.body.userId)
+    const result = await userDb.deleteOne({ _id: req.body.userId });
+
+    console.log(`${result.deletedCount} document(s) deleted`);
+    return res.json({ Status: "success" });
+} catch (error) {
+  console.log(error);
+}
+
+}
+
+
 module.exports = {
   login,
   userlist,
   create,
+  removeuser,
+
 };
