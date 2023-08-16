@@ -10,7 +10,8 @@ export const removeUser = createAsyncThunk(
 
       if (response.data.Status === "success") {
         return userId; // Return userId to handle the success case
-      } else { return rejectWithValue(response.data.error)}
+      } else { 
+        return rejectWithValue(response.data.error)}
 
     } catch (error) {
       return rejectWithValue(error.message);
@@ -18,6 +19,32 @@ export const removeUser = createAsyncThunk(
   }
 );
 
+//slice for login purpose
+export const loginslice = createSlice({
+    name: "loginUser",
+    initialState: [],
+    reducers: {
+        loginUser:(state,action)=>{
+            // state.name  = action.payload.name,
+            // state.email = action.payload.email,
+            // state.login = action.payload.login,
+            // state.token = action.payload.token
+            const { name, email, login, token,image } = action.payload;
+    
+      return {
+        ...state,
+        name: name,
+        email: email,
+        login: login,
+        token: token,
+        image: image,
+      };
+        }
+      }
+    })
+
+
+//slice for userlisting and deletion purpose
 export const userSlice = createSlice({
   name: "user",
   initialState: [],
@@ -25,23 +52,8 @@ export const userSlice = createSlice({
     LoadUser: (state, action) => {
       return action.payload;
     },
-    loginUser:(state,action)=>{
-        // state.name  = action.payload.name,
-        // state.email = action.payload.email,
-        // state.login = action.payload.login,
-        // state.token = action.payload.token
-        const { name, email, login, token,image } = action.payload;
-
-  return {
-    ...state,
-    name: name,
-    email: email,
-    login: login,
-    token: token,
-    image: image,
-  };
-    }
-  },
+    
+},
   extraReducers: (builder) => {
     builder
       .addCase(removeUser.fulfilled, (state, action) => {
@@ -54,5 +66,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const { LoadUser,loginUser } = userSlice.actions;
-export default userSlice.reducer;
+export const { LoadUser } = userSlice.actions;
+export const { loginUser } = loginslice.actions;
+export const userSliceReducer = userSlice.reducer;
+export const loginsliceReducer = loginslice.reducer;

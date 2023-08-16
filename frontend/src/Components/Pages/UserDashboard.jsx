@@ -3,15 +3,16 @@ import React,{useEffect} from 'react'
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Dashboard.css"
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet,useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoginSection from '../Login/LoginSection';
 
 
-
-
 const UserDashboard = () => {
 const user = useSelector(state=>state.login)
+
+const navigate =  useNavigate()
+
 console.log(user);
   return (
     <>
@@ -45,10 +46,9 @@ console.log(user);
         <div className="col py-3 textcolor col p-0 m-0">
             <div className='p-2 d-flex justify-content-center shadow'>
               <h4>User Home</h4>
-             
-            </div>
-
-        <Outlet/>
+                         </div>
+            {!user.login?navigate("/"):<Outlet/>}
+        
 
         </div>
     </div>

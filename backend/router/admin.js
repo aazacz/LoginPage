@@ -26,4 +26,5 @@ adminRoute.post("/login", adminController.login);
 adminRoute.get('/userlist',adminController.userlist)
 adminRoute.post('/create',upload.single('image'),adminController.create)
 adminRoute.post('/removeuser',adminController.removeuser)
+adminRoute.post('/update',upload.single('image'),adminController.update)
 module.exports = adminRoute;

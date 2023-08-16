@@ -10,6 +10,7 @@ import UserDashboard from "./Components/Pages/UserDashboard";
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import UserDashboardDefault from "./Components/Pages/UserDashboardDefault";
 import Profile from "./Components/profile/Profile";
+import UpdateUser from "./Components/UpdateUserAdmin/UpdateUser";
 
 
 
@@ -32,7 +33,10 @@ const router = createBrowserRouter([
         children: [ { index: true, element: <UserDetails /> }, 
         { path: "create",
           element: <Create/>,
-        }],
+        },
+        { path: "update",
+        element: <UpdateUser/>,
+      }],
   },
   {
     path: "/UserDashboard",
