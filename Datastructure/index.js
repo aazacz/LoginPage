@@ -6,7 +6,7 @@ function LinearSearch(arr, target) {
     }
     return -1
 }
-
+console.log("Linear search");
 const res = LinearSearch([1, 3, 3, 2, 2, 4, 3, 4, 54, 3, 2, 5, 5, 3,], 5)
 console.log(res)
 
@@ -33,7 +33,7 @@ function binarySearch(arr, target) {
     }
     return -1
 }
-
+console.log("binary search");
 console.log(binarySearch([4, 2, 43, 543, 2, 5, 2, 4, 4, 3, 32, 3], 5))
 
 
@@ -137,4 +137,18 @@ console.log(quicksort(arr3));
 
 
 
-/* ------------------------------ Quick Sorting----------------------------------=*/
+/* ------------------------------ Merge Sorting----------------------------------=*/
+
+function mergesort(arr){
+    if(arr.length < 2){
+        return arr
+    }
+
+
+}
+
+
+//ascending order
+const arr4 = [4,44,26,32,6,53,-12]
+console.log("Merge sort");
+console.log(mergeSort(arr4));
