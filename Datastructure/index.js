@@ -139,12 +139,27 @@ console.log(quicksort(arr3));
 
 /* ------------------------------ Merge Sorting----------------------------------=*/
 
-function mergesort(arr){
+function mergeSort(arr){
     if(arr.length < 2){
         return arr
     }
+const mid = Math.floor(arr.length/2)
+const leftArr = arr.slice(0,mid)
+const rightArr = arr.slice(mid)
+return merge(mergeSort(leftArr),mergeSort(rightArr))
+}
 
-
+function merge(leftArr,rightArr){
+    const sortedArr=[]
+while(leftArr.length&&rightArr.length){
+    if(leftArr[0]<rightArr[0]){
+        sortedArr.push(leftArr.shift())
+    }
+    else{
+        sortedArr.push(rightArr.shift())
+    }
+    return [...sortedArr,...leftArr,...rightArr]
+}
 }
 
 
@@ -152,3 +167,53 @@ function mergesort(arr){
 const arr4 = [4,44,26,32,6,53,-12]
 console.log("Merge sort");
 console.log(mergeSort(arr4));
+
+/* ------------------------------ DS Moderate Level----------------------------------=*/
+
+
+/* ------------------------------------ Arrays---------------------------------------=*/
+console.log("Array  DataStructure");
+
+
+const arr5 = [1,2,3,"abhilash"]
+arr5.push(5)
+arr5.unshift(10)
+arr5.pop()
+arr5.shift()
+
+
+
+for (const i of arr5){
+        console.log(i);
+}
+
+
+
+/* ------------------------------------ Objects---------------------------------------=*/
+console.log("Object  DataStructure");
+
+
+const obj = {
+    name:"Bruce",
+    age: 25
+}
+console.log(obj);
+
+
+                                 //Big O complexity
+/*                                     insert = O{n}
+                                    remove = O(1)
+                                    Access = O(1)
+                                    Search = O(n)
+                                    Object.keys()  = O(n)
+                                    Object.value() = O(n)
+ */
+
+/* ------------------------------------ Set ---------------------------------------*/
+console.log("SET DataStructure");
+const set = new Set([1,3,3,2,454,3])
+set.add(54)
+
+for (const num of set){
+    console.log(num);
+}
