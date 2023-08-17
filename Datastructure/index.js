@@ -6,7 +6,7 @@ function LinearSearch(arr, target) {
     }
     return -1
 }
-console.log("Linear search");
+console.log("\n Linear search");
 const res = LinearSearch([1, 3, 3, 2, 2, 4, 3, 4, 54, 3, 2, 5, 5, 3,], 5)
 console.log(res)
 
@@ -33,7 +33,7 @@ function binarySearch(arr, target) {
     }
     return -1
 }
-console.log("binary search");
+console.log("\n binary search");
 console.log(binarySearch([4, 2, 43, 543, 2, 5, 2, 4, 4, 3, 32, 3], 5))
 
 
@@ -60,7 +60,7 @@ function search(arr, target, left, right) {
          return search(arr, target, middle + 1, right) }
 }
 
-console.log("Recursive Binary Search");
+console.log("\n Recursive Binary Search");
 
 console.log(RecursiveBinary([4, 2, 43, 543, 2, 5, 2, 4, 4, 3, 32, 3], 543))
 
@@ -85,7 +85,7 @@ do {
 
 let arr1 = [4, 2, 43, 543, 2, 5, 2, 4, 4, 3, 32, 3];
 bubblesort(arr1);
-console.log("Bubble sort");
+console.log("\n Bubble sort");
 
 console.log(arr1);
 
@@ -107,7 +107,7 @@ for(let i=1;i<arr.length;i++){
 
 let arr2 = [4, 2, 43, 543, 2, 5, 2, 4, 4, 3, 32, 3];
 insertionSort(arr2)
-console.log("insertion sort");
+console.log("\ninsertion sort");
 
 console.log(arr2);
 
@@ -132,7 +132,7 @@ function quicksort(arr){
 }
 
 const arr3 = [4,44,26,32,6,53,-12]
-console.log("quick sort");
+console.log("\n quick sort");
 console.log(quicksort(arr3));
 
 
@@ -165,14 +165,14 @@ while(leftArr.length&&rightArr.length){
 
 //ascending order
 const arr4 = [4,44,26,32,6,53,-12]
-console.log("Merge sort");
+console.log("\n Merge sort");
 console.log(mergeSort(arr4));
 
 /* ------------------------------ DS Moderate Level----------------------------------=*/
 
 
 /* ------------------------------------ Arrays---------------------------------------=*/
-console.log("Array  DataStructure");
+console.log("\n Array  DataStructure");
 
 
 const arr5 = [1,2,3,"abhilash"]
@@ -190,7 +190,7 @@ for (const i of arr5){
 
 
 /* ------------------------------------ Objects---------------------------------------=*/
-console.log("Object  DataStructure");
+console.log("\n Object  DataStructure");
 
 
 const obj = {
@@ -210,9 +210,14 @@ console.log(obj);
  */
 
 /* ------------------------------------ Set ---------------------------------------*/
-console.log("SET DataStructure");
+console.log("\n SET DataStructure");
 const set = new Set([1,3,3,2,454,3])
 set.add(54)
+console.log(set.has(4));
+set.delete(3)
+console.log(set.size);
+
+//cannot add duplicate values in set
 
 for (const num of set){
     console.log(num);
