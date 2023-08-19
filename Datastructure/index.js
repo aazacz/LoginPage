@@ -310,7 +310,14 @@ this.size++
         }
         else{
             let prev = this.head
-            
+            for(let i=0;i<index-1;i++){
+                prev =prev.next
+            }
+            const node = new Node(value)
+            node.next=prev.next
+            prev.next=node
+            this.size++
+
         }
     }
 
