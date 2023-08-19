@@ -216,9 +216,78 @@ set.add(54)
 console.log(set.has(4));
 set.delete(3)
 console.log(set.size);
+set.clear()
 
 //cannot add duplicate values in set
 
 for (const num of set){
     console.log(num);
 }
+
+
+
+/* ------------------------------------ MAP ---------------------------------------*/
+console.log("\n MAP DataStructure");
+
+const mao = new Map()
+
+/* ------------------------------------ Linked List ---------------------------------------*/
+console.log("\nLinkedlist DataStructure");
+
+class Node{
+    constructor(value){
+        this.value = value
+        this.next = null
+    }
+
+}
+
+class LinkedList{
+    constructor(){
+        this.head = null
+        this.size = 0
+    }
+
+    isEmpty(){
+     return this.size===0
+    }
+    getSize(){
+        return this.size;
+    }
+
+    prepend(value){
+        
+        const newNode = new Node(value)
+        if(this.isEmpty()){
+            this.head = newNode
+        }else{
+            newNode.next=this.head;
+            this.head = newNode
+       }
+            this.size++
+
+    }
+
+
+    print(){
+        let current=this.head
+        if(this.isEmpty){
+            return 0
+        }
+        while(!current==null){
+            current=this.next
+            console.log(current)
+        }
+    }
+
+}
+
+
+
+const list = new LinkedList()
+console.log(list.isEmpty());
+list.prepend(10)
+list.prepend(20)
+list.prepend(30)
+console.log(list.print());
+
