@@ -269,14 +269,48 @@ class LinkedList{
     }
 
 
+    append(value){
+    const node = new Node(value)
+
+    if(this.isEmpty()){
+            this.head=node
+     }
+else{
+
+    let current = this.head
+    while(current.next !== null){
+        current = current.next
+    }
+    
+        current.next = node
+}
+this.size++
+
+    }
+
+
     print(){
         let current=this.head
-        if(this.isEmpty){
+        console.log(this.head)
+        if(this.isEmpty()){
             return 0
         }
-        while(!current==null){
-            current=this.next
+        while(current!==null){
+            current=current.next
             console.log(current)
+        }
+    }
+
+    insert(value,index){
+        if(index<this.size){
+            this.prepend(value)
+        }
+        else if(index>this.size){
+            this.append(value)
+        }
+        else{
+            let prev = this.head
+            
         }
     }
 
@@ -286,8 +320,8 @@ class LinkedList{
 
 const list = new LinkedList()
 console.log(list.isEmpty());
-list.prepend(10)
-list.prepend(20)
-list.prepend(30)
-console.log(list.print());
+list.append(10)
+list.append(20)
+list.append(30)
+list.print();
 
