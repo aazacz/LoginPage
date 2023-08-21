@@ -2,7 +2,8 @@
 
 function LinearSearch(arr, target) {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) { return i + 1 }
+        if (arr[i] === target) {
+             return i + 1 }
     }
     return -1
 }
@@ -205,7 +206,7 @@ console.log(obj);
 
 
 //Big O complexity
-/*                                     insert = O{n}
+/*                                  insert = O{n}
                                     remove = O(1)
                                     Access = O(1)
                                     Search = O(n)
@@ -243,7 +244,6 @@ class Node {
         this.value = value
         this.next = null
     }
-
 }
 
 class LinkedList {
@@ -255,13 +255,13 @@ class LinkedList {
     isEmpty() {                  //Check the LinkedList is empty or not
         return this.size === 0
     }
+
     getSize() {
-        console.log(this.size);              //get the size of the linked list
+        console.log(this.size);  //get the size of the linked list
         return this.size;
     }
 
     prepend(value) {             //adding at the beginning of the linked list
-
         const newNode = new Node(value)
         if (this.isEmpty()) {
             this.head = newNode
@@ -310,7 +310,7 @@ class LinkedList {
 
     }
 
-    insert(value, index) {            //insert at a specific index
+    insert(value, index) {        //insert at a specific index
         if (index <= 0) {
             this.prepend(value)
         }
@@ -509,5 +509,46 @@ console.log(Queue.peek());
 
 /* ------------------------------------ Queue ---------------------------------------*/ //constant time complexity
 console.log("\nQueue-Optimised DataStructure");
+
+class queueO{
+
+    constructor(){
+        this.items = {}
+        this.front = 0
+        this.rear = 0
+    }
+    enqueue(value){
+        this.items[this.rear] = value 
+        this.rear++
+    }
+    
+    dequeue(){
+        const returnItem = this.items[this.front] 
+        delete this.items[this.front]
+        this.front++
+        return returnItem
+    }
+
+    isEmpty(){
+        return this.front = this.rear === 0
+    }
+
+    peek(){
+        return this.items[this.front]
+    }
+
+    size(){
+        return this.rear - this.front
+    }
+
+    print(){
+        console.log(this.items);
+    }
+
+}
+
+
+/* ------------------------------------Circular Queue ---------------------------------------*/ //constant time complexity
+console.log("\nCircular Queue DataStructure");
 
 
