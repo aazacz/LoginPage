@@ -248,15 +248,15 @@ class LinkedList{
         this.size = 0
     }
 
-    isEmpty(){
+    isEmpty(){                  //Check the LinkedList is empty or not
      return this.size===0
     }
-    getSize(){
+    getSize(){                  //get the size of the linked list
         return this.size;
     }
 
-    prepend(value){
-        
+    prepend(value){             //adding at the beginning of the linked list
+
         const newNode = new Node(value)
         if(this.isEmpty()){
             this.head = newNode
@@ -269,7 +269,7 @@ class LinkedList{
     }
 
 
-    append(value){
+    append(value){              //adding at the last of  the linked list
     const node = new Node(value)
 
     if(this.isEmpty()){
@@ -289,20 +289,25 @@ this.size++
     }
 
 
-    print(){
+    print(){                    //printing the linked list
         let current=this.head
+        let list = " "
         console.log(this.head)
         if(this.isEmpty()){
             return 0
         }
         while(current!==null){
+            list += `${current.value} `
             current=current.next
+           
             console.log(current)
         }
+             console.log(list)
+
     }
 
-    insert(value,index){
-        if(index<this.size){
+    insert(value,index){            //insert at a specific index
+        if(index<=0){
             this.prepend(value)
         }
         else if(index>this.size){
@@ -331,4 +336,5 @@ list.append(10)
 list.append(20)
 list.append(30)
 list.print();
-
+list.insert(44,2)
+list.print();
