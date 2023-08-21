@@ -551,4 +551,50 @@ class queueO{
 /* ------------------------------------Circular Queue ---------------------------------------*/ //constant time complexity
 console.log("\nCircular Queue DataStructure");
 
+class CircularQueue{
+    constructor(capacity){
+        this.items = new Array(capacity)
+        this.capacity=capacity
+        this.currentLength = 0
+        this.rear = -1
+        this.front = -1
 
+    }
+    isFull(){
+        return this.currentLength === this.capacity
+    }
+
+    isEmpty(){
+        return this.currentLength === 0
+    }
+
+    enqueue(value){
+        if(!this.isFull){
+            this.rear=this.rear+1
+            this.items[this.rear] = value
+            this.currentLength+=1
+            if(this.front===-1){ //ee condition one time run aavu..because -1 zero aaki vachilla engil enqueue cheytha value appol thanne dequeue cheyan patila 
+                this.front = this.rear
+            }
+        }
+        return -1
+
+    }
+
+    dequeue(){
+        if(this.isEmpty()){
+            return null
+        }
+        else{
+        const item = this.items[this.front]
+        this.items[this.front] = null
+        this.front = this.front+1
+        this.currentLength -=1   
+        if(this.isEmpty()){
+            this.front=this.rear = -1
+        }
+        return item
+        }
+    }
+
+}
