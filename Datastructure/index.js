@@ -424,4 +424,90 @@ list.getSize()
 console.log("\nStack DataStructure");
 
 
-class stack
+class stack{
+    constructor(){
+        this.items = []
+    }
+    push(value){
+        this.items.push(value)
+    }
+    pop(){
+        return this.items.pop()
+    }
+    peek(){
+        return this.items[this.items.length-1]
+    }
+
+    isEmpty(){
+        return this.items.length === 0
+
+    }
+    size(){
+        return this.items.length
+    }
+    print(){
+        console.log(this.items.toString());
+    }
+
+}
+
+const Stack = new stack()
+console.log(Stack.isEmpty());
+Stack.push(10)
+Stack.push(20)
+Stack.push(30)
+Stack.print()
+console.log(Stack.peek());
+
+
+
+/* ------------------------------------ Queue ---------------------------------------*/ //linear time complexity
+console.log("\nQueue DataStructure");
+
+class queue{
+    constructor(){
+        this.items = []
+    }
+    enqueue(value){
+        this.items.push(value)
+    }
+    dequeue(){
+        return this.items.shift()
+    }
+    isEmpty(){
+        return this.items.length===0
+    }
+
+    peek(){
+        if(!this.isEmpty()){
+            return this.items[0]
+        }
+        return null
+    }
+
+    size(){
+        return this.items.length
+    }
+
+    print(){
+        console.log(this.items.toString());
+    }
+}
+
+const Queue = new queue
+console.log(Queue.isEmpty());
+Queue.enqueue(10)
+Queue.enqueue(20)
+Queue.enqueue(23)
+Queue.enqueue(44)
+Queue.print()
+Queue.dequeue()
+Queue.print()
+console.log(Queue.peek());
+
+
+
+/* ------------------------------------ Queue ---------------------------------------*/ //constant time complexity
+console.log("\nQueue-Optimised DataStructure");
+
+
